@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة منتج</title>
+</head>
+<body>
+    <h2>إضافة منتج جديد</h2>
+    <form id="productForm">
+        <input type="text" id="name" placeholder="اسم المنتج" required>
+        <input type="number" id="price" placeholder="السعر" required>
+        <input type="text" id="image" placeholder="رابط الصورة" required>
+        <button type="submit">إضافة المنتج</button>
+    </form>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const price = document.getElementById('price').value;
+            const image = document.getElementById('image').value;
+
+            const response = await fetch('/api/products', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, price, image })
+            });
+
+            const data = await response.json();
+            alert(data.message);
+        });
+    </script>
+</body>
+</html>

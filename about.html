@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن - برينجت ستور</title>
+    <link rel="stylesheet" href="styles.css"> <!-- رابط ملف CSS -->
+    <style>
+        /* استيراد خط جوجل */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    direction: rtl;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+    background: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #4CAF50;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    min-width: 150px;
+    top: 40px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+.cart {
+    font-size: 24px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-count {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 8px;
+    font-size: 12px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+.page-content {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>برينجت ستور</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li class="dropdown">
+                <a href="#">أقسام الموقع</a>
+                <div class="dropdown-content">
+                    <a href="about.html">من نحن</a>
+                    <a href="services.html">خدماتنا</a>
+                    <a href="contact.html">تواصل معنا</a>
+                </div>
+            </li>
+        </ul>
+        <div class="cart">
+            🛒
+            <span class="cart-count">0</span>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <h2>من نحن</h2>
+        <p>نحن متجر إلكتروني متخصص في تقديم أفضل المنتجات بأسعار تنافسية. نسعى دائمًا لتلبية احتياجات عملائنا الكرام.</p>
+    </div>
+
+    <footer>
+        &copy; 2023 برينجت ستور. جميع الحقوق محفوظة.
+    </footer>
+
+</body>
+</html>

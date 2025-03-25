@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <style>
+    .product {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .product button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .product button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Products</h1>
+  <div class="product">
+    <h3>Product 1</h3>
+    <p>Price: $19.99</p>
+    <button onclick="addToCart(1)">Add to Cart</button>
+  </div>
+  <div class="product">
+    <h3>Product 2</h3>
+    <p>Price: $29.99</p>
+    <button onclick="addToCart(2)">Add to Cart</button>
+  </div>
+
+  <script>
+    function addToCart(productId) {
+      fetch(`/add-to-cart/${productId}`, { method: 'POST' })
+        .then(response => {
+          if (response.ok) {
+            window.location.href = '/cart'; // تحويل المستخدم إلى سلة المشتريات
+          }
+        });
+    }
+  </script>
+</body>
+</html>
